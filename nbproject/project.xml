@@ -53,6 +53,11 @@
             </properties>
             <folders>
                 <source-folder>
+                    <label>Java CORBA Development: master workspace</label>
+                    <location>.</location>
+                    <encoding>UTF-8</encoding>
+                </source-folder>
+                <source-folder>
                     <label>src/share/classes</label>
                     <type>java</type>
                     <location>src/share/classes</location>
@@ -95,8 +100,15 @@
                     <encoding>UTF-8</encoding>
                 </source-folder>
                 <source-folder>
-                    <label>Java CORBA Development: master workspace</label>
-                    <location>.</location>
+                    <label>orbmain-src</label>
+                    <type>java</type>
+                    <location>orbmain/src/main/java</location>
+                    <encoding>UTF-8</encoding>
+                </source-folder>
+                <source-folder>
+                    <label>orbmain-res</label>
+                    <type>java</type>
+                    <location>orbmain/src/main/resources</location>
                     <encoding>UTF-8</encoding>
                 </source-folder>
             </folders>
@@ -164,6 +176,14 @@
                     <source-folder style="packages">
                         <label>test/build/gensrc</label>
                         <location>test/build/gensrc</location>
+                    </source-folder>
+                    <source-folder style="packages">
+                        <label>orbmain-src</label>
+                        <location>orbmain/src/main/java</location>
+                    </source-folder>
+                    <source-folder style="packages">
+                        <label>orbmain-res</label>
+                        <location>orbmain/src/main/resources</location>
                     </source-folder>
                     <source-file>
                         <location>${ant.script}</location>
@@ -245,6 +265,8 @@
                 <package-root>test/src/share/classes/values1</package-root>
                 <package-root>test/src/share/classes/values2</package-root>
                 <package-root>test/build/gensrc</package-root>
+                <package-root>orbmain/src/main/java</package-root>
+                <package-root>orbmain/src/main/resources</package-root>
                 <classpath mode="compile">test/build/classes:build/classes:build/libcache/gmbal.jar:build/libcache/management-api.jar:build/libcache/org.osgi.core.jar:lib/testng.jar:lib/junit.jar:lib/japex.jar:lib/ejb-2_1-api.jar:build/libcache/pfl-basic-tools.jar:build/libcache/pfl-dynamic.jar:build/libcache/pfl-test.jar:build/libcache/pfl-tf-tools.jar:build/libcache/pfl-tf.jar:build/libcache/pfl-basic.jar</classpath>
                 <built-to>build/classes</built-to>
                 <built-to>test/build/classes</built-to>

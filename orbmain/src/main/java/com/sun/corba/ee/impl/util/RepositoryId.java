@@ -990,12 +990,10 @@ public class RepositoryId {
                 }
 
                 // Convert the character into the IDL escape syntax...
-                buffer.append(
-                              "\\U" +
-                              (char)ASCII_HEX[(c & 0xF000) >>> 12] +
-                              (char)ASCII_HEX[(c & 0x0F00) >>> 8] +
-                              (char)ASCII_HEX[(c & 0x00F0) >>> 4] +
-                              (char)ASCII_HEX[(c & 0x000F)]);
+                buffer.append("\\U");
+				for (int ci=3; ci>=0; ci--) {
+					buffer.append( (char)ASCII_HEX[(c >>> i*4) & 0x0F ] );
+				}
                         
             } else {
                 if (buffer != null) {
@@ -1019,47 +1017,28 @@ public class RepositoryId {
      */
     private static String convertFromISOLatin1 (String name) {
 
-        int index = -1;
-        StringBuffer buf = new StringBuffer(name);
+        StringBuilder buf = new StringBuilder(name.length());
 
-        while ((index = buf.toString().indexOf("\\U")) != -1){
-            String str = "0000" + buf.toString().substring(index+2, index+6);
-
+        int pind = 0;
+		for (int index = name.indexOf("\\U", pind); index != -1 && index+6 <= name.length(); pind = index+6, index = name.indexOf("\\U", pind) ) {
+			buf.append(name, pind, index);
             // Convert Hexadecimal
-            byte[] buffer = new byte[(str.length() - 4) / 2];
-            for (int i=4, j=0; i < str.length(); i +=2, j++) {
-                buffer[j] = 
-                    (byte)((Utility.hexOf(str.charAt(i)) << 4) & 0xF0);
-                buffer[j] |= 
-                    (byte)((Utility.hexOf(str.charAt(i+1)) << 0) & 0x0F);
-            }            
-            buf = new StringBuffer(delete(buf.toString(), index, index+6));
-            buf.insert(index, (char)buffer[1]);
-        }
+            long buffer = 0;
+            for (int i=index+2; i < index+6; i++) {
+                buffer = (buffer << 4) | (hexOf(name.charAt(i)) & 0x0F);
+            }
+			buf.append((char)buffer);
+		}
+		buf.append(name, pind, name.length());
         
         return buf.toString();
 
 
     }
 
-    private static String delete(String str, int from, int to)
-    {
-        return str.substring(0, from) + str.substring(to, str.length());    
-    }
-
-    private static String replace(String target, String arg, String source)
-    {
-        int i = 0;
-        i = target.indexOf(arg);
-
-        while(i != -1)
-            {
-                String left = target.substring(0, i);
-                String right = target.substring(i+arg.length());
-                target = left+source+right;
-                i = target.indexOf(arg);
-            }
-        return target;
+	static int hexOf( char x ) {
+		int h = ((x>>4) & 0xF) - 3;
+		return h*9 + (x&0xF);
     }
 
     public static int computeValueTag(boolean codeBasePresent, int typeInfo, 
