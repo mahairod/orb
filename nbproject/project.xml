@@ -58,57 +58,73 @@
                     <encoding>UTF-8</encoding>
                 </source-folder>
                 <source-folder>
-                    <label>src/share/classes</label>
-                    <type>java</type>
-                    <location>src/share/classes</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
                     <label>build/gensrc</label>
                     <type>java</type>
                     <location>build/gensrc</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
-                    <label>test/src/share/classes</label>
-                    <type>java</type>
-                    <location>test/src/share/classes</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
-                    <label>test/src/share/classes/test12</label>
-                    <type>java</type>
-                    <location>test/src/share/classes/test12</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
-                    <label>test/src/share/classes/values1</label>
-                    <type>java</type>
-                    <location>test/src/share/classes/values1</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
-                    <label>test/src/share/classes/values2</label>
-                    <type>java</type>
-                    <location>test/src/share/classes/values2</location>
-                    <encoding>UTF-8</encoding>
-                </source-folder>
-                <source-folder>
-                    <label>test/build/gensrc</label>
-                    <type>java</type>
-                    <location>test/build/gensrc</location>
+                    <excludes>**/values1/**,**/values2/**</excludes>
                     <encoding>UTF-8</encoding>
                 </source-folder>
                 <source-folder>
                     <label>orbmain-src</label>
                     <type>java</type>
                     <location>orbmain/src/main/java</location>
+                    <excludes>**/values1/**,**/values2/**</excludes>
                     <encoding>UTF-8</encoding>
                 </source-folder>
                 <source-folder>
                     <label>orbmain-res</label>
                     <type>java</type>
                     <location>orbmain/src/main/resources</location>
+                    <excludes>**/values1/**,**/values2/**</excludes>
+                    <encoding>UTF-8</encoding>
+                </source-folder>
+                <source-folder>
+                    <label>src/share/classes</label>
+                    <type>java</type>
+                    <location>src/share/classes</location>
+                    <excludes>**/values1/**,**/values2/**</excludes>
+                    <encoding>UTF-8</encoding>
+                </source-folder>
+                <source-folder>
+                    <label>test</label>
+                    <type>java</type>
+                    <location>test/src/share/classes</location>
+                    <excludes>**/values1/**,**/values2/**</excludes>
+                    <encoding>UTF-8</encoding>
+                </source-folder>
+                <source-folder>
+                    <label>test/values1</label>
+                    <type>java</type>
+                    <location>test/src/share/classes/values1</location>
+                    <excludes>**/values1/**,**/values2/**</excludes>
+                    <encoding>UTF-8</encoding>
+                </source-folder>
+                <source-folder>
+                    <label>omgapi</label>
+                    <type>java</type>
+                    <location>omgapi/src/main/java</location>
+                    <excludes>**/values1/**,**/values2/**</excludes>
+                    <encoding>UTF-8</encoding>
+                </source-folder>
+                <source-folder>
+                    <label>test/values2</label>
+                    <type>java</type>
+                    <location>test/src/share/classes/values2</location>
+                    <excludes>**/values1/**,**/values2/**</excludes>
+                    <encoding>UTF-8</encoding>
+                </source-folder>
+                <source-folder>
+                    <label>test/gensrc</label>
+                    <type>java</type>
+                    <location>test/build/gensrc</location>
+                    <excludes>**/values1/**,**/values2/**</excludes>
+                    <encoding>UTF-8</encoding>
+                </source-folder>
+                <source-folder>
+                    <label>orbmain/src/test/java</label>
+                    <type>java</type>
+                    <location>orbmain/src/test/java</location>
+                    <excludes>**/values1/**,**/values2/**</excludes>
                     <encoding>UTF-8</encoding>
                 </source-folder>
             </folders>
@@ -147,43 +163,93 @@
                 <script>${ant.script}</script>
                 <build-target>build</build-target>
             </export>
+            <export>
+                <type>folder</type>
+                <location>build/classes</location>
+                <script>${ant.script}</script>
+                <build-target>build</build-target>
+            </export>
+            <export>
+                <type>folder</type>
+                <location>test/build/classes</location>
+                <script>${ant.script}</script>
+                <build-target>build</build-target>
+            </export>
+            <export>
+                <type>folder</type>
+                <location>build/classes</location>
+                <script>${ant.script}</script>
+                <build-target>build</build-target>
+            </export>
+            <export>
+                <type>folder</type>
+                <location>test/build/classes</location>
+                <script>${ant.script}</script>
+                <build-target>build</build-target>
+            </export>
+            <export>
+                <type>folder</type>
+                <location>build/classes</location>
+                <script>${ant.script}</script>
+                <build-target>build</build-target>
+            </export>
+            <export>
+                <type>folder</type>
+                <location>test/build/classes</location>
+                <script>${ant.script}</script>
+                <build-target>build</build-target>
+            </export>
             <view>
                 <items>
                     <source-folder style="packages">
-                        <label>src/share/classes</label>
-                        <location>src/share/classes</location>
-                    </source-folder>
-                    <source-folder style="packages">
                         <label>build/gensrc</label>
                         <location>build/gensrc</location>
-                    </source-folder>
-                    <source-folder style="packages">
-                        <label>test/src/share/classes</label>
-                        <location>test/src/share/classes</location>
-                    </source-folder>
-                    <source-folder style="packages">
-                        <label>test/src/share/classes/test12</label>
-                        <location>test/src/share/classes/test12</location>
-                    </source-folder>
-                    <source-folder style="packages">
-                        <label>test/src/share/classes/values1</label>
-                        <location>test/src/share/classes/values1</location>
-                    </source-folder>
-                    <source-folder style="packages">
-                        <label>test/src/share/classes/values2</label>
-                        <location>test/src/share/classes/values2</location>
-                    </source-folder>
-                    <source-folder style="packages">
-                        <label>test/build/gensrc</label>
-                        <location>test/build/gensrc</location>
+                        <excludes>**/values1/**,**/values2/**</excludes>
                     </source-folder>
                     <source-folder style="packages">
                         <label>orbmain-src</label>
                         <location>orbmain/src/main/java</location>
+                        <excludes>**/values1/**,**/values2/**</excludes>
                     </source-folder>
                     <source-folder style="packages">
                         <label>orbmain-res</label>
                         <location>orbmain/src/main/resources</location>
+                        <excludes>**/values1/**,**/values2/**</excludes>
+                    </source-folder>
+                    <source-folder style="packages">
+                        <label>src/share/classes</label>
+                        <location>src/share/classes</location>
+                        <excludes>**/values1/**,**/values2/**</excludes>
+                    </source-folder>
+                    <source-folder style="packages">
+                        <label>test</label>
+                        <location>test/src/share/classes</location>
+                        <excludes>**/values1/**,**/values2/**</excludes>
+                    </source-folder>
+                    <source-folder style="packages">
+                        <label>test/values1</label>
+                        <location>test/src/share/classes/values1</location>
+                        <excludes>**/values1/**,**/values2/**</excludes>
+                    </source-folder>
+                    <source-folder style="packages">
+                        <label>omgapi</label>
+                        <location>omgapi/src/main/java</location>
+                        <excludes>**/values1/**,**/values2/**</excludes>
+                    </source-folder>
+                    <source-folder style="packages">
+                        <label>test/values2</label>
+                        <location>test/src/share/classes/values2</location>
+                        <excludes>**/values1/**,**/values2/**</excludes>
+                    </source-folder>
+                    <source-folder style="packages">
+                        <label>test/gensrc</label>
+                        <location>test/build/gensrc</location>
+                        <excludes>**/values1/**,**/values2/**</excludes>
+                    </source-folder>
+                    <source-folder style="packages">
+                        <label>orbmain/src/test/java</label>
+                        <location>orbmain/src/test/java</location>
+                        <excludes>**/values1/**,**/values2/**</excludes>
                     </source-folder>
                     <source-file>
                         <location>${ant.script}</location>
@@ -259,17 +325,59 @@
         <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/2">
             <compilation-unit>
                 <package-root>src/share/classes</package-root>
-                <package-root>test/src/share/classes</package-root>
+                <classpath mode="compile">test/build/classes:build/classes:build/libcache/gmbal.jar:build/libcache/management-api.jar:build/libcache/org.osgi.core.jar:lib/testng.jar:lib/junit.jar:lib/japex.jar:lib/ejb-2_1-api.jar:build/libcache/pfl-basic-tools.jar:build/libcache/pfl-dynamic.jar:build/libcache/pfl-test.jar:build/libcache/pfl-tf-tools.jar:build/libcache/pfl-tf.jar:build/libcache/pfl-basic.jar</classpath>
+                <built-to>build/classes</built-to>
+                <built-to>test/build/classes</built-to>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+            <compilation-unit>
                 <package-root>build/gensrc</package-root>
-                <package-root>test/src/share/classes/test12</package-root>
-                <package-root>test/src/share/classes/values1</package-root>
-                <package-root>test/src/share/classes/values2</package-root>
-                <package-root>test/build/gensrc</package-root>
+                <classpath mode="compile">test/build/classes:build/classes:build/libcache/gmbal.jar:build/libcache/management-api.jar:build/libcache/org.osgi.core.jar:lib/testng.jar:lib/junit.jar:lib/japex.jar:lib/ejb-2_1-api.jar:build/libcache/pfl-basic-tools.jar:build/libcache/pfl-dynamic.jar:build/libcache/pfl-test.jar:build/libcache/pfl-tf-tools.jar:build/libcache/pfl-tf.jar:build/libcache/pfl-basic.jar</classpath>
+                <built-to>build/classes</built-to>
+                <built-to>test/build/classes</built-to>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+            <compilation-unit>
                 <package-root>orbmain/src/main/java</package-root>
+                <classpath mode="compile">test/build/classes:build/classes:build/libcache/gmbal.jar:build/libcache/management-api.jar:build/libcache/org.osgi.core.jar:lib/testng.jar:lib/junit.jar:lib/japex.jar:lib/ejb-2_1-api.jar:build/libcache/pfl-basic-tools.jar:build/libcache/pfl-dynamic.jar:build/libcache/pfl-test.jar:build/libcache/pfl-tf-tools.jar:build/libcache/pfl-tf.jar:build/libcache/pfl-basic.jar</classpath>
+                <built-to>build/classes</built-to>
+                <built-to>test/build/classes</built-to>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+            <compilation-unit>
                 <package-root>orbmain/src/main/resources</package-root>
                 <classpath mode="compile">test/build/classes:build/classes:build/libcache/gmbal.jar:build/libcache/management-api.jar:build/libcache/org.osgi.core.jar:lib/testng.jar:lib/junit.jar:lib/japex.jar:lib/ejb-2_1-api.jar:build/libcache/pfl-basic-tools.jar:build/libcache/pfl-dynamic.jar:build/libcache/pfl-test.jar:build/libcache/pfl-tf-tools.jar:build/libcache/pfl-tf.jar:build/libcache/pfl-basic.jar</classpath>
                 <built-to>build/classes</built-to>
                 <built-to>test/build/classes</built-to>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+            <compilation-unit>
+                <package-root>test/src/share/classes</package-root>
+                <unit-tests/>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+            <compilation-unit>
+                <package-root>test/src/share/classes/values1</package-root>
+                <unit-tests/>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+            <compilation-unit>
+                <package-root>test/src/share/classes/values2</package-root>
+                <unit-tests/>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+            <compilation-unit>
+                <package-root>test/build/gensrc</package-root>
+                <unit-tests/>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+            <compilation-unit>
+                <package-root>omgapi/src/main/java</package-root>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+            <compilation-unit>
+                <package-root>orbmain/src/test/java</package-root>
+                <unit-tests/>
                 <source-level>1.5</source-level>
             </compilation-unit>
         </java-data>

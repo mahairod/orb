@@ -1032,8 +1032,6 @@ public class RepositoryId {
 		buf.append(name, pind, name.length());
         
         return buf.toString();
-
-
     }
 
 	static int hexOf( char x ) {
