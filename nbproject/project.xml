@@ -127,6 +127,13 @@
                     <excludes>**/values1/**,**/values2/**</excludes>
                     <encoding>UTF-8</encoding>
                 </source-folder>
+                <source-folder>
+                    <label>functional-tests</label>
+                    <type>java</type>
+                    <location>functional-tests/src/test/java</location>
+                    <excludes>**/values1/**,**/values2/**</excludes>
+                    <encoding>UTF-8</encoding>
+                </source-folder>
             </folders>
             <ide-actions>
                 <action name="build">
@@ -249,6 +256,11 @@
                     <source-folder style="packages">
                         <label>orbmain/src/test/java</label>
                         <location>orbmain/src/test/java</location>
+                        <excludes>**/values1/**,**/values2/**</excludes>
+                    </source-folder>
+                    <source-folder style="packages">
+                        <label>functional-tests</label>
+                        <location>functional-tests/src/test/java</location>
                         <excludes>**/values1/**,**/values2/**</excludes>
                     </source-folder>
                     <source-file>
@@ -377,6 +389,11 @@
             </compilation-unit>
             <compilation-unit>
                 <package-root>orbmain/src/test/java</package-root>
+                <unit-tests/>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+            <compilation-unit>
+                <package-root>functional-tests/src/test/java</package-root>
                 <unit-tests/>
                 <source-level>1.5</source-level>
             </compilation-unit>

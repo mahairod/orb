@@ -1,6 +1,2 @@
-/csiv2-idl/target/
-/idlj/target/
-/omgapi/target/
-/internal-api/target
-/exception-annotation-processor/target
-/orbmain/target/
+/*/target/
+/test/run/

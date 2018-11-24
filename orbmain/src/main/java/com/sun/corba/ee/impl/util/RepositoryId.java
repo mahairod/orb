@@ -972,7 +972,7 @@ public class RepositoryId {
         if (length == 0) {
             return name;
         }
-        StringBuffer buffer = null;
+        StringBuilder buffer = null;
 
         for (int i = 0; i < length; i++) {
 
@@ -986,13 +986,13 @@ public class RepositoryId {
 
                     // No, so get set up...
 
-                    buffer = new StringBuffer(name.substring(0,i));
+                    buffer = new StringBuilder(name.substring(0,i));
                 }
 
                 // Convert the character into the IDL escape syntax...
                 buffer.append("\\U");
 				for (int ci=3; ci>=0; ci--) {
-					buffer.append( (char)ASCII_HEX[(c >>> i*4) & 0x0F ] );
+					buffer.append( (char)ASCII_HEX[((c >> ci*4)) & 0x0F ] );
 				}
                         
             } else {
